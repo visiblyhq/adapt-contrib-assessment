@@ -26,7 +26,7 @@ const assessmentConfigDefaults = {
   _allowResetIfPassed: false
 };
 
-const AssessmentModel = {
+const AssessmentPageModel = {
 
   _getCurrentQuestionComponents() {
     return this.findDescendantModels('block')
@@ -283,11 +283,13 @@ const AssessmentModel = {
 
   _onBlockCompleted(blockModel, value) {
     if (value === false) return;
+
     const questionModels = blockModel.findDescendantModels('question');
     questionModels.forEach(questionModel => {
       this._onQuestionCompleted(questionModel, value);
     });
     if (!blockModel.get('_isInteractionComplete')) return;
+
     this._checkAssessmentComplete();
   },
 
@@ -308,6 +310,7 @@ const AssessmentModel = {
     const allQuestionsAdded = (this.get('_requireCompletionOf') !== Number.POSITIVE_INFINITY);
     if (!allQuestionsAdded) return;
     const numberOfQuestionsAnswered = this.get('_numberOfQuestionsAnswered');
+
     const allQuestionsAnswered = (numberOfQuestionsAnswered >= this._getCurrentQuestionComponents().length);
     if (!allQuestionsAnswered) return;
     this._onAssessmentComplete();
@@ -568,7 +571,6 @@ const AssessmentModel = {
   },
 
   reset(force, callback) {
-
     const assessmentConfig = this.getConfig();
 
     // check if forcing reset via page revisit or force parameter
@@ -730,8 +732,9 @@ const AssessmentModel = {
     const state = {
       id: assessmentConfig._id,
       type: 'article-assessment',
-      pageId: this.getParent().get('_id'),
-      articleId: this.get('_id'),
+      // pageId: this.getParent().get('_id'),
+      pageId: this.get('_id'),
+      // articleId: this.get('_id'),
       isEnabled: assessmentConfig._isEnabled,
       isComplete: this.get('_isAssessmentComplete'),
       isPercentageBased: assessmentConfig._isPercentageBased,
@@ -780,4 +783,4 @@ const AssessmentModel = {
   }
 };
 
-export default AssessmentModel;
+export default AssessmentPageModel;

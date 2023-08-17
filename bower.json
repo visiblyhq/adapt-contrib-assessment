@@ -1,13 +1,13 @@
 {
   "name": "adapt-contrib-assessment",
-  "version": "5.1.8",
+  "version": "5.1.9",
   "framework": ">=5.19.1",
   "homepage": "https://github.com/adaptlearning/adapt-contrib-assessment",
   "bugs": "https://github.com/adaptlearning/adapt-contrib-assessment/issues",
   "extension": "assessment",
   "displayName": "Assessment",
   "description": "An extension which attaches to an article object to group various question components and provide a score with feedback",
-  "main": "/js/adapt-assessmentArticleExtension.js",
+  "main": "/js/adapt-assessmentPageExtension.js",
   "keywords": [
     "adapt-plugin",
     "adapt-extension"

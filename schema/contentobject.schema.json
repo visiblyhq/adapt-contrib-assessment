@@ -4,7 +4,7 @@
   "type": "object",
   "$patch": {
     "source": {
-      "$ref": "article"
+      "$ref": "contentObject"
     },
     "with": {
       "properties": {

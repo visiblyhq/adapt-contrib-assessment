@@ -12,48 +12,9 @@
           "type": "object"
         },
         "course": {
-          "type": "object",
-          "properties": {
-            "_assessment": {
-              "type": "object",
-              "required": false,
-              "legend": "Assessment",
-              "properties": {
-                "_isPercentageBased": {
-                  "type": "boolean",
-                  "required": true,
-                  "default": true,
-                  "title": "Percentage based",
-                  "inputType": "Checkbox",
-                  "help": "Determines whether the values of the 'Pass mark' should be treated as a percentage (default) or as the raw score and correctness.",
-                  "validators": []
-                },
-                "_scoreToPass": {
-                  "type": "number",
-                  "required": false,
-                  "title": "Pass mark",
-                  "inputType": "Number",
-                  "default": 60,
-                  "help": "The minimum score required by the learner to pass the assessment or the minimum percentage score if 'Percentage based'.",
-                  "validators": ["number"]
-                },
-                "_correctToPass": {
-                  "type": "number",
-                  "required": false,
-                  "title": "Correct pass mark",
-                  "inputType": "Number",
-                  "default": 60,
-                  "help": "The minimum number of correct questions required by the learner to pass the assessment or the minimum percentage correct if 'Percentage based'.",
-                  "validators": ["number"]
-                }
-              }
-            }
-          }
-        },
-        "contentobject": {
           "type": "object"
         },
-        "article": {
+        "contentobject": {
           "type": "object",
           "properties": {
             "_assessment": {
@@ -271,6 +232,9 @@
               }
             }
           }
+        },
+        "article": {
+          "type": "object"
         },
         "block": {
           "type": "object",
